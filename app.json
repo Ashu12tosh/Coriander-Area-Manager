@@ -24,7 +24,11 @@
       "permissions": [
         "android.permission.CAMERA"
       ],
-      "package": "com.coriander.coriandercrm"
+      "package": "com.coriander.coriandercrm",
+      "compileSdkVersion": 35,
+      "targetSdkVersion": 35,
+      "enableProguardInReleaseBuilds": true,
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro"
