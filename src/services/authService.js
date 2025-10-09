@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const sendOtp = async (mobileNumber) => {
   try {
-    const response = await apiClient.post("webshop.api.send_otp", {
+    const response = await apiClient.post("/api/method/coriander_shop.api.send_otp", {
       mobile: mobileNumber,
       purpose: "login",
     });
@@ -34,7 +34,7 @@ export const sendOtp = async (mobileNumber) => {
 
 // export const verifyOtp = async (mobileNumber, otp) => {
 //   try {
-//     const response = await apiClient.post("webshop.api.login", {
+//     const response = await apiClient.post("/api/method/coriander_shop.api.login", {
 //       mobile: mobileNumber,
 //       otp: otp,
 //     });
@@ -75,7 +75,7 @@ export const sendOtp = async (mobileNumber) => {
 
 export const verifyOtp = async (mobileNumber, otp) => {
   try {
-    const response = await apiClient.post("webshop.api.login", {
+    const response = await apiClient.post("/api/method/coriander_shop.api.login", {
       mobile: mobileNumber,
       otp: otp,
     });
@@ -137,7 +137,7 @@ export const logout = async () => {
     await AsyncStorage.removeItem("user");
 
     // If your backend has a logout endpoint, you can call it here
-    // await apiClient.post('webshop.api.logout');
+    // await apiClient.post('/api/method/coriander_shop.api.logout');
 
     return { status: "success" };
   } catch (error) {

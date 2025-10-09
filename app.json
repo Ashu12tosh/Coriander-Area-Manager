@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "Coriander CRM",
+    "slug": "coriander-crm",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/cor.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "scheme": "your-app-scheme",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/cor.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,9 +18,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/cor.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "package": "com.coriander.coriandercrm"
     },
     "web": {
       "bundler": "metro"
@@ -28,6 +32,15 @@
     "plugins": [
       "expo-router",
       "expo-barcode-scanner"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "2ff28b12-2283-4850-94ad-9a4c8dc2eb2e"
+      }
+    },
+    "owner": "galaxydestroyer"
   }
 }

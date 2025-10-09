@@ -2,7 +2,7 @@ import apiClient from "./apiClient";
 
 export const sendNotification = async ({ warehouse, userType, message }) => {
   try {
-    const response = await apiClient.post("webshop.item.send_notification", {
+    const response = await apiClient.post("/api/method/coriander_shop.item.send_notification", {
       warehouse,
       user_type: userType,
       message,

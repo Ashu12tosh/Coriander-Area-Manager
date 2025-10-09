@@ -3,7 +3,7 @@
 // export const getSalesInvoiceItems = async (invoiceName) => {
 //   try {
 //     const response = await apiClient.get(
-//       "webshop.item.get_sales_invoice_items", // no /api/method prefix here, apiClient should already handle it
+//       "/api/method/coriander_shop.item.get_sales_invoice_items", // no /api/method prefix here, apiClient should already handle it
 //       {
 //         params: { invoice_name: invoiceName },
 //       }
@@ -35,7 +35,7 @@ import apiClient from "./apiClient";
 export const getSalesInvoiceItems = async (invoiceName) => {
   try {
     const response = await apiClient.get(
-      "webshop.item.get_sales_invoice_items",
+      "/api/method/coriander_shop.item.get_sales_invoice_items",
       {
         params: { invoice_name: invoiceName },
       }
@@ -66,7 +66,7 @@ export const getSalesInvoiceItems = async (invoiceName) => {
 // export const deliverSalesInvoice = async (salesInvoiceName) => {
 //   try {
 //     const response = await apiClient.post(
-//       "webshop.item.make_delivery_note_with_qty_check",
+//       "/api/method/coriander_shop.item.make_delivery_note_with_qty_check",
 //       { sales_invoice_name: salesInvoiceName }
 //     );
 
@@ -96,7 +96,7 @@ export const getSalesInvoiceItems = async (invoiceName) => {
 export const deliverSalesInvoice = async (salesInvoiceName) => {
   try {
     const response = await apiClient.post(
-      "webshop.item.make_delivery_note_with_qty_check",
+      "/api/method/coriander_shop.item.make_delivery_note_with_qty_check",
       { sales_invoice_name: salesInvoiceName }
     );
 
@@ -144,7 +144,7 @@ export const deliverSalesInvoice = async (salesInvoiceName) => {
 // export const makeDeliveryOrCoupon = async (salesInvoiceName) => {
 //   try {
 //     const response = await apiClient.post(
-//       "webshop.item.make_delivery_or_coupon",
+//       "/api/method/coriander_shop.item.make_delivery_or_coupon",
 //       { sales_invoice_name: salesInvoiceName }
 //     );
 
@@ -189,7 +189,7 @@ export const makeDeliveryOrCoupon = async (
 ) => {
   try {
     const response = await apiClient.post(
-      "webshop.item.make_delivery_or_coupon",
+      "/api/method/coriander_shop.item.make_delivery_or_coupon",
       {
         sales_invoice_name: salesInvoiceName,
         discount_value: discountValue,
@@ -251,7 +251,7 @@ export const makeDeliveryOrCoupon = async (
 // Add this function to salesInvoiceService.js
 export const createCoupon = async (salesInvoiceName, discountValue = 0) => {
   try {
-    const response = await apiClient.post("webshop.item.create_coupon", {
+    const response = await apiClient.post("/api/method/coriander_shop.item.create_coupon", {
       sales_invoice_name: salesInvoiceName,
       discount_value: discountValue,
     });
@@ -303,7 +303,7 @@ export const createCoupon = async (salesInvoiceName, discountValue = 0) => {
 export const checkCouponForInvoice = async (invoiceName) => {
   try {
     const response = await apiClient.get(
-      "webshop.item.check_coupon_for_invoice",
+      "/api/method/coriander_shop.item.check_coupon_for_invoice",
       { params: { invoice_name: invoiceName } }
     );
 
@@ -324,7 +324,7 @@ export const checkCouponForInvoice = async (invoiceName) => {
 export const getActiveCoupons = async () => {
   try {
     const response = await apiClient.get(
-      "webshop.item.get_active_coupons_submanager"
+      "/api/method/coriander_shop.item.get_active_coupons_submanager"
     );
 
     if (response.data?.message?.status === "success") {

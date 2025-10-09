@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://coriander.mozility.com/api/method/",
+  baseURL: "https://coriander.mozility.com",
   withCredentials: true, // Required for session-based authentication
   headers: {
     "Content-Type": "application/json",

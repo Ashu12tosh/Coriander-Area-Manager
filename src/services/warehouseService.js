@@ -2,7 +2,7 @@ import apiClient from "./apiClient";
 
 export const getWarehouseMappings = async () => {
   try {
-    const response = await apiClient.get("webshop.api.get_child_warehouses", {
+    const response = await apiClient.get("/api/method/coriander_shop.api.get_child_warehouses", {
       params: {
         parent_warehouse: "Coriander Warehouse - CFPL",
       },

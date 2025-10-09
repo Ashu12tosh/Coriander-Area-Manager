@@ -25,7 +25,7 @@ export const createMenuItem = async (menuItemData, imageUri) => {
     }
 
     const response = await apiClient.post(
-      "webshop.item.create_item",
+      "/api/method/coriander_shop.item.create_item",
       formData,
       {
         headers: {
@@ -74,7 +74,7 @@ export const updateItemPublishStatus = async (
 
     // The Frappe backend URL is already in apiClient's baseURL, so we just append the method path
     const response = await apiClient.post(
-      "webshop.item.update_item_publish_status",
+      "/api/method/coriander_shop.item.update_item_publish_status",
       payload
     );
 
@@ -95,7 +95,7 @@ export const updateItemPublishStatus = async (
 export const deleteMenuItem = async (itemCode, warehouseName) => {
   try {
     const response = await apiClient.post(
-      "webshop.item.remove_item_from_warehouse_menu",
+      "/api/method/coriander_shop.item.remove_item_from_warehouse_menu",
 
       {
         item_codes: [itemCode], // The API expects a list of item codes
@@ -134,7 +134,7 @@ export const deleteMenuItem = async (itemCode, warehouseName) => {
 
 export const getMenuItems = async () => {
   try {
-    const response = await apiClient.get("webshop.item.get_item_details");
+    const response = await apiClient.get("/api/method/coriander_shop.item.get_item_details");
 
     if (response.data.message.status === "success") {
       // FIX: The backend now returns the data in an 'items' array, not 'data'.
@@ -234,7 +234,7 @@ export const addItemsToWarehouseMenu = async (
     };
  
     const response = await apiClient.post(
-      "webshop.item.add_items_to_warehouse_menu",
+      "/api/method/coriander_shop.item.add_items_to_warehouse_menu",
       payload
     );
     return response.data.message;
@@ -256,7 +256,7 @@ export const getTodaysMenuItems = async (warehouseName) => {
     );
 
     const response = await apiClient.post(
-      "webshop.item.get_item_mappings_weekly",
+      "/api/method/coriander_shop.item.get_item_mappings_weekly",
       { company: warehouseName } // Now using warehouse name directly
     );
 
@@ -300,7 +300,7 @@ export const getTodaysMenuItems = async (warehouseName) => {
 export const getWeeklyMenuItems = async (warehouseName) => {
   try {
     const response = await apiClient.post(
-      "webshop.item.get_item_mappings_weekly",
+      "/api/method/coriander_shop.item.get_item_mappings_weekly",
       { company: warehouseName }
     );
 
@@ -326,7 +326,7 @@ export const getWeeklyMenuItems = async (warehouseName) => {
 
 export const addStock = async (itemCode, targetWarehouse, quantity) => {
   try {
-    const response = await apiClient.post("webshop.item.add_stock", {
+    const response = await apiClient.post("/api/method/coriander_shop.item.add_stock", {
       item_code: itemCode,
       target_warehouse: targetWarehouse,
       qty: parseFloat(quantity), // Ensure it's sent as a number
@@ -359,7 +359,7 @@ export const addStock = async (itemCode, targetWarehouse, quantity) => {
 export const getInventoryData = async (warehouse) => {
   try {
     const response = await apiClient.get(
-      `webshop.item.get_bin_data_by_warehouse`,
+      `/api/method/coriander_shop.item.get_bin_data_by_warehouse`,
       { params: { warehouse } }
     );
     return response.data;
@@ -370,7 +370,7 @@ export const getInventoryData = async (warehouse) => {
 
 export const getDailyOrders = async (warehouse) => {
   try {
-    const response = await apiClient.get(`webshop.item.get_daily_order`, {
+    const response = await apiClient.get(`/api/method/coriander_shop.item.get_daily_order`, {
       params: { warehouse },
     });
     return response.data;
@@ -381,7 +381,7 @@ export const getDailyOrders = async (warehouse) => {
 
 export const getWeeklyOrders = async (warehouse) => {
   try {
-    const response = await apiClient.get(`webshop.item.get_weekly_order`, {
+    const response = await apiClient.get(`/api/method/coriander_shop.item.get_weekly_order`, {
       params: { warehouse },
     });
     return response.data;
@@ -392,7 +392,7 @@ export const getWeeklyOrders = async (warehouse) => {
 
 export const getMonthlyOrders = async (warehouse) => {
   try {
-    const response = await apiClient.get(`webshop.item.get_monthly_orders`, {
+    const response = await apiClient.get(`/api/method/coriander_shop.item.get_monthly_orders`, {
       params: { warehouse },
     });
     return response.data;
@@ -404,7 +404,7 @@ export const getMonthlyOrders = async (warehouse) => {
 export const getDateRangeOrders = async (warehouse, fromDate, toDate) => {
   try {
     const response = await apiClient.get(
-      `webshop.item.get_orders_by_date_range`,
+      `/api/method/coriander_shop.item.get_orders_by_date_range`,
       { params: { warehouse, from_date: fromDate, to_date: toDate } }
     );
     return response.data;
@@ -416,7 +416,7 @@ export const getDateRangeOrders = async (warehouse, fromDate, toDate) => {
 export const getItemsByWarehouse = async (warehouse, fromDate, toDate) => {
   try {
     const response = await apiClient.get(
-      "webshop.item.get_items_by_warehouse",
+      "/api/method/coriander_shop.item.get_items_by_warehouse",
       {
         params: { warehouse, from_date: fromDate, to_date: toDate },
       }

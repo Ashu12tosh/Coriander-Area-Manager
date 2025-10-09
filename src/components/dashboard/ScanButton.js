@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 export const ScanButton = ({ onPress }) => {
   return (
     <View className="items-center mb-10">
-      <TouchableOpacity
+      {/* <TouchableOpacity
         onPress={onPress}
         className="
           px-6 py-3 rounded-xl flex-row items-center justify-center 
@@ -23,11 +23,11 @@ export const ScanButton = ({ onPress }) => {
         >
           Scan to Deliver
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      <Text className="text-sm mt-2 text-gray-500">
+      {/* <Text className="text-sm mt-2 text-gray-500">
         Press to scan delivery QR code
-      </Text>
+      </Text> */}
     </View>
   );
 };
