@@ -19,6 +19,7 @@ import {
   setWarehouseError,
 } from "../../src/redux/slices/warehouseSlice";
 import { Header } from "../../src/components/header/Header";
+import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { BarChart, PieChart } from "react-native-chart-kit";
 import { getWarehouseMappings } from "../../src/services/warehouseService";
@@ -470,6 +471,7 @@ export default function ReportsScreen() {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8fcf8' }}>
     <ScrollView
       className="flex-1 px-4 pt-4 bg-green-50"
       refreshControl={
@@ -652,5 +654,6 @@ export default function ReportsScreen() {
         </View>
       ))}
     </ScrollView>
+    </SafeAreaView>
   );
 }

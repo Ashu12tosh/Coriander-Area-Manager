@@ -2,12 +2,12 @@
   "expo": {
     "name": "Coriander CRM",
     "slug": "coriander-crm",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/cor.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "scheme": "your-app-scheme",
+    "scheme": "coriander-crm",
     "splash": {
       "image": "./assets/cor.png",
       "resizeMode": "contain",
@@ -15,6 +15,16 @@
     },
     "ios": {
       "supportsTablet": true
+    },
+    "androidStatusBar": {
+      "translucent": false,
+      "backgroundColor": "#f8fcf8",
+      "barStyle": "dark-content"
+    },
+    "androidNavigationBar": {
+      "visible": true,
+      "backgroundColor": "#ffffff",
+      "barStyle": "dark-content"
     },
     "android": {
       "adaptiveIcon": {
@@ -28,7 +38,8 @@
       "compileSdkVersion": 35,
       "targetSdkVersion": 35,
       "enableProguardInReleaseBuilds": true,
-      "versionCode": 1
+      "versionCode": 4,
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "bundler": "metro"

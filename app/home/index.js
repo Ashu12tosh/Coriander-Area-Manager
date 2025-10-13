@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   Modal,
   Image,
-  SafeAreaView,
+  
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../src/redux/slices/authSlice";
@@ -20,6 +20,7 @@ import {
   setWarehouseError,
 } from "../../src/redux/slices/warehouseSlice";
 import { Header } from "../../src/components/header/Header";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { DashboardTabs } from "../../src/components/dashboard/DashboardTabs";
 import { StatsCard } from "../../src/components/dashboard/StatsCard";
 import { InventoryList } from "../../src/components/dashboard/InventoryList";
@@ -573,6 +574,7 @@ export default function Home() {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8fcf8' }}>
     <View style={{ flex: 1 }}>
       <ScrollView
         className="flex-1 px-4 pt-4 bg-green-50"
@@ -1035,5 +1037,6 @@ export default function Home() {
         onClose={() => setAlertState({ ...alertState, visible: false })}
       />
     </View>
+    </SafeAreaView>
   );
 }

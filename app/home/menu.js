@@ -22,7 +22,7 @@ import { Header } from "../../src/components/header/Header";
 import { Ionicons } from "@expo/vector-icons";
 
 import { getWarehouseMappings } from "../../src/services/warehouseService";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 import MenuTabs from "../../src/components/menu/MenuTabs";
 import MenuList from "../../src/components/menu/MenuList";
 import ManageWeeklyModal from "../../src/components/menu/ManageWeeklyModal";
@@ -605,6 +605,7 @@ export default function MenuScreen() {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8fcf8' }}>
     <ScrollView
       className="flex-1 px-4 pt-4 bg-green-50"
       refreshControl={
@@ -796,5 +797,6 @@ export default function MenuScreen() {
         onClose={() => setAlertState({ ...alertState, visible: false })}
       />
     </ScrollView>
+    </SafeAreaView>
   );
 }

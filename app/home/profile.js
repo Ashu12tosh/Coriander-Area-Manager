@@ -20,7 +20,7 @@ import { getWarehouseMappings } from "../../src/services/warehouseService";
 import { checkExistingSession } from "../../src/services/authService";
 import { sendNotification } from "../../src/services/notificationService";
 import { getUsersByWarehouses } from "../../src/services/userService"; // Add this import
-
+import { SafeAreaView } from "react-native-safe-area-context"; // Add this import
 // Import components
 import ProfileHeader from "../../src/components/profile/ProfileHeader";
 import ProfileCard from "../../src/components/profile/ProfileCard";
@@ -242,6 +242,7 @@ export default function ProfileScreen() {
   }
 
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#f8fcf8' }}>
     <ScrollView
       className="flex-1 bg-green-50 px-4 pt-4"
       refreshControl={
@@ -313,5 +314,6 @@ export default function ProfileScreen() {
         onClose={() => setAlertState({ ...alertState, visible: false })}
       />
     </ScrollView>
+    </SafeAreaView>
   );
 }
